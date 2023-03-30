@@ -1,5 +1,5 @@
 # podcast-downloader
 
-Ett enkelt litet script för att ladda ner alla avsnitt av en podcast.
+A tiny python script to download all episodes of a podcast. Enter your feed on row 4 and run the script.
 
-Skriv in feeden på rad 4 och kör sen scriptet med python.
+Todo: add feed as a flag
