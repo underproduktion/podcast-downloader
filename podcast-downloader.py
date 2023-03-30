@@ -5,7 +5,7 @@ PodFeed = feedparser.parse("INSERT FEED HERE")
 
 for post in PodFeed.entries:
     print("Downloading "+post.title)
-    datum = time.strftime("%y%m%d", post.published_parsed)
+    date = time.strftime("%y%m%d", post.published_parsed)
     abvtitle = post.title
     abvtitle = abvtitle.replace(" ", "_")
     abvtitle = abvtitle.replace("/", "_")
@@ -23,8 +23,8 @@ for post in PodFeed.entries:
     abvtitle = abvtitle.replace("–", "")
     abvtitle = abvtitle.replace("-", "")
     abvtitle = abvtitle.replace('"', '')
-    filnamn = datum+"_"+abvtitle+".mp3"
-    print("Filename: "+filnamn+"\n")
+    filename = date+"_"+abvtitle+".mp3"
+    print("Filename: "+filename+"\n")
     url = post.enclosures[0].href
     r = requests.get(url, allow_redirects=True)
-    open(filnamn, 'wb').write(r.content)
+    open(filename, 'wb').write(r.content)
